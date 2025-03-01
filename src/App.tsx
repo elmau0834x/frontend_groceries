@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://192.168.137.1:3000/groceries/products/getAll");
+        const response = await axios.get("http://10.10.60.13:3000/groceries/products/getAll");
         console.log(response.data);  // Verifica los datos en la consola
         setProducts(response.data.data.data);  // Asume que la respuesta tiene los productos directamente en response.data
       } catch (error) {
@@ -41,7 +41,7 @@ function App() {
   // Función para agregar un producto
   const onAddProduct = async (newProduct: any) => {
     try {
-      const response = await fetch('http://192.168.137.1:3000/groceries/products/insertOne', {
+      const response = await fetch('http://10.10.60.13:3000/groceries/products/insertOne', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function App() {
   // Función para actualizar un producto
   const onUpdateProduct = async (updatedProduct: Product) => {
     try {
-      const response = await fetch(`http://192.168.137.1:3000/groceries/products/updateOne/${updatedProduct.barcode}`, {
+      const response = await fetch(`http://10.10.60.13:3000/groceries/products/updateOne/${updatedProduct.barcode}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

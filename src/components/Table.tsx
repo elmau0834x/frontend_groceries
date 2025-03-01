@@ -26,7 +26,7 @@ export const Table: React.FC<TableProps> = ({ products, setProducts, setEditingP
     }
 
     try {
-      await axios.delete(`http://192.168.137.1:3000/groceries/products/deleteOne/${barcode}`);
+      await axios.delete(`http://10.10.60.13:3000/groceries/products/deleteOne/${barcode}`);
       console.log(`Producto con código ${barcode} eliminado`);
 
       // 🔥 Actualiza la lista de productos eliminando el producto de la UI
